@@ -8,28 +8,30 @@ datasource db {
 }
 
 model User {
-  id      Int    @id @default(autoincrement())
-  name    String
-  email   String @unique
-  role    String
-  @@map("users")
+  id    Int     @id @default(autoincrement())
+  name  String
+  email String  @unique
 }
 
 model Product {
-  id       Int    @id @default(autoincrement())
-  name     String
-  price    Float
-  category String
-}
-
-model Order {
-  id       Int    @id @default(autoincrement())
-  userId   Int
-  product  String
-  status   String
+  id    Int     @id @default(autoincrement())
+  name  String
+  price Float
 }
 
 model Category {
-  id       Int    @id @default(autoincrement())
-  name     String
+  id   Int    @id @default(autoincrement())
+  name String
+}
+
+model Order {
+  id        Int    @id @default(autoincrement())
+  quantity  Int
+  productId Int
+}
+
+model Customer {
+  id   Int    @id @default(autoincrement())
+  name String
+  age  Int
 }
